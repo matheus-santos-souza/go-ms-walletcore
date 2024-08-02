@@ -4,6 +4,8 @@ import (
 	"testing"
 
 	"github.com/matheus-santos-souza/go-ms-walletcore/internal/entity"
+	"github.com/matheus-santos-souza/go-ms-walletcore/internal/event"
+	"github.com/matheus-santos-souza/go-ms-walletcore/pkg/events"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )
@@ -52,7 +54,11 @@ func TestCreateTransactionUseCase_Execute(t *testing.T) {
 		AccountIDTo:   account2.ID,
 		Amount:        100,
 	}
-	uc := NewCreateTransactionUseCase(mockTransaction, mockAccount)
+
+	dispatcher := events.NewEventDispatcher()
+	event := event.NewTransactionCreated()
+
+	uc := NewCreateTransactionUseCase(mockTransaction, mockAccount, dispatcher, event)
 	output, err := uc.Execute(inputDto)
 	assert.Nil(t, err)
 	assert.NotNil(t, output)

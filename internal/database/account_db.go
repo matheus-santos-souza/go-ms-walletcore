@@ -17,7 +17,7 @@ func NewAccountDB(db *sql.DB) *AccountDB {
 }
 
 func (a *AccountDB) FindByID(id string) (*entity.Account, error) {
-	var account entity.Account
+	account := &entity.Account{}
 	var client entity.Client
 	account.Client = &client
 	stmt, err := a.DB.Prepare("SELECT a.id, a.client_id, a.balance, a.created_at, c.id, c.name, c.email, c.created_at FROM accounts a INNER JOIN clients c ON a.client_id = c.id WHERE a.id = ?")
@@ -39,10 +39,10 @@ func (a *AccountDB) FindByID(id string) (*entity.Account, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &account, nil
+	return account, nil
 }
 
-func (a *AccountDB) Save(account entity.Account) error {
+func (a *AccountDB) Save(account *entity.Account) error {
 	stmt, err := a.DB.Prepare("INSERT INTO accounts (id, client_id, balance, created_at) VALUES (?, ?, ?, ?)")
 	if err != nil {
 		return err

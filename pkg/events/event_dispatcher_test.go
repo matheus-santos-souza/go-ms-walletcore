@@ -14,6 +14,11 @@ type TestEvent struct {
 	Payload interface{}
 }
 
+// SetPayload implements IEvent.
+func (e *TestEvent) SetPayload(payload interface{}) {
+	panic("unimplemented")
+}
+
 func (e *TestEvent) GetName() string {
 	return e.Name
 }

@@ -59,6 +59,7 @@ func (ed *EventDispatcher) Remove(eventName string, handler IEventHandler) error
 	return nil
 }
 
-func (ed *EventDispatcher) Clear() {
+func (ed *EventDispatcher) Clear() error {
 	ed.handlers = make(map[string][]IEventHandler)
+	return nil
 }
