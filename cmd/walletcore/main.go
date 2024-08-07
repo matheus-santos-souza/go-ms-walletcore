@@ -5,28 +5,57 @@ import (
 	"database/sql"
 	"fmt"
 
+<<<<<<< HEAD
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/matheus-santos-souza/go-ms-walletcore/internal/database"
 	"github.com/matheus-santos-souza/go-ms-walletcore/internal/event"
+=======
+	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/matheus-santos-souza/go-ms-walletcore/internal/database"
+	"github.com/matheus-santos-souza/go-ms-walletcore/internal/event"
+	"github.com/matheus-santos-souza/go-ms-walletcore/internal/event/handler"
+>>>>>>> master
 	createaccount "github.com/matheus-santos-souza/go-ms-walletcore/internal/usecase/create_account"
 	createclient "github.com/matheus-santos-souza/go-ms-walletcore/internal/usecase/create_client"
 	createtransaction "github.com/matheus-santos-souza/go-ms-walletcore/internal/usecase/create_transaction"
 	"github.com/matheus-santos-souza/go-ms-walletcore/internal/web"
 	"github.com/matheus-santos-souza/go-ms-walletcore/internal/web/webserver"
 	"github.com/matheus-santos-souza/go-ms-walletcore/pkg/events"
+<<<<<<< HEAD
+=======
+	"github.com/matheus-santos-souza/go-ms-walletcore/pkg/kafka"
+>>>>>>> master
 	"github.com/matheus-santos-souza/go-ms-walletcore/pkg/uow"
 )
 
 func main() {
+<<<<<<< HEAD
 	db, err := sql.Open("mysql", "root:root@tcp(localhost:3306)/wallet?charset=utf8&parseTime=True&loc=Local")
+=======
+	db, err := sql.Open("mysql", "root:root@tcp(mysql:3306)/wallet?charset=utf8&parseTime=True&loc=Local")
+>>>>>>> master
 	if err != nil {
 		panic(err)
 	}
 	defer db.Close()
 
+<<<<<<< HEAD
 	eventDispatcher := events.NewEventDispatcher()
 	transactionCreatedEvent := event.NewTransactionCreated()
 	// eventDispatcher.Register("TransactionCreated", handler)
+=======
+	configMap := ckafka.ConfigMap{
+		"bootstrap.servers": "kafka:29092",
+		"group.id":          "wallet",
+	}
+
+	kafkaProducer := kafka.NewKafkaProducer(&configMap)
+
+	eventDispatcher := events.NewEventDispatcher()
+	eventDispatcher.Register("TransactionCreated", handler.NewTransactionCreatedKafkaHandler(kafkaProducer))
+	transactionCreatedEvent := event.NewTransactionCreated()
+>>>>>>> master
 
 	clientDb := database.NewClientDB(db)
 	accountDb := database.NewAccountDB(db)

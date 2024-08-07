@@ -24,7 +24,11 @@ func (s *TransactionDBTestSuite) SetupSuite() {
 	s.Nil(err)
 	s.db = db
 	db.Exec("CREATE TABLE clients (id VARCHAR(255), name VARCHAR(255), email VARCHAR(255), created_at DATE)")
+<<<<<<< HEAD
 	db.Exec("CREATE TABLE accounts (id VARCHAR(255), client_id VARCHAR(255), name VARCHAR(255), balance INT, created_at DATE)")
+=======
+	db.Exec("CREATE TABLE accounts (id VARCHAR(255), client_id VARCHAR(255), balance INT, created_at DATE)")
+>>>>>>> master
 	db.Exec("CREATE TABLE transactions (id VARCHAR(255), account_id_from VARCHAR(255), account_id_to VARCHAR(255), amount INT, created_at DATE)")
 	s.client, _ = entity.NewClient("Matheus", "m@m.com")
 	s.client2, _ = entity.NewClient("Santos", "s@s.com")

@@ -1,6 +1,13 @@
 package events
 
+<<<<<<< HEAD
 import "time"
+=======
+import (
+	"sync"
+	"time"
+)
+>>>>>>> master
 
 type IEvent interface {
 	GetName() string
@@ -10,7 +17,11 @@ type IEvent interface {
 }
 
 type IEventHandler interface {
+<<<<<<< HEAD
 	Handle(event IEvent)
+=======
+	Handle(event IEvent, wg *sync.WaitGroup)
+>>>>>>> master
 }
 
 type IEventDispatcher interface {
