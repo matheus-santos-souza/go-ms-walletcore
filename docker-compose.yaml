@@ -1,6 +1,4 @@
 services:
-<<<<<<< HEAD
-=======
   goapp:
     build: .
     platform: linux/amd64
@@ -9,7 +7,6 @@ services:
     ports:
       - 8080:8080
 
->>>>>>> master
   mysql:
     image: mysql:5.7
     platform: linux/amd64
@@ -20,9 +17,6 @@ services:
     ports:
       - 3306:3306
     volumes:
-<<<<<<< HEAD
-      - .docker/mysql:/var/lib/mysql
-=======
       - .docker/mysql:/var/lib/mysql
 
   zookeeper:
@@ -74,4 +68,3 @@ services:
       CONTROL_CENTER_MONITORING_INTERCEPTOR_TOPIC_PARTITIONS: 1
       CONFLUENT_METRICS_TOPIC_REPLICATION: 1
       PORT: 9021
->>>>>>> master

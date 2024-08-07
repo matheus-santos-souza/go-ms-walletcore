@@ -2,13 +2,8 @@ POST http://localhost:8080/clients HTTP/1.1
 Content-Type: application/json
 
 {
-<<<<<<< HEAD
-    "name": "Matheus",
-    "email": "Santos"
-=======
     "name": "Fulano",
     "email": "Ciclano"
->>>>>>> master
 }
 
 ###
@@ -17,11 +12,7 @@ POST http://localhost:8080/accounts HTTP/1.1
 Content-Type: application/json
 
 {
-<<<<<<< HEAD
-    "client_id": "aeb18298-15c9-4684-bdd0-acc9d7683fa3"
-=======
     "client_id": "698143b3-bcd9-4b98-8f89-7e50328101ea"
->>>>>>> master
 }
 
 ###
@@ -30,12 +21,7 @@ POST http://localhost:8080/transactions HTTP/1.1
 Content-Type: application/json
 
 {
-<<<<<<< HEAD
-    "account_id_from": "971e747a-b904-477e-9696-e570fc23cfec",
-    "account_id_to": "270a9aec-74d4-4b9f-92ce-5761588b2e17",
-=======
     "account_id_from": "a5e077df-feb9-4d20-8821-de11defb079c",
     "account_id_to": "571a24b8-3f0d-47bd-9845-f22b71cfa0fa",
->>>>>>> master
     "amount": 10
 }
