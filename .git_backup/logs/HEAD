@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 7fd3737ab42c9cacdb93232e0c44f53f39447ad4 matheus-santos-souza <matheus.santos.souza2020@outlook.com> 1720577046 -0400	commit (initial): first commit
+7fd3737ab42c9cacdb93232e0c44f53f39447ad4 0000000000000000000000000000000000000000 matheus-santos-souza <matheus.santos.souza2020@outlook.com> 1720577046 -0400	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 7fd3737ab42c9cacdb93232e0c44f53f39447ad4 matheus-santos-souza <matheus.santos.souza2020@outlook.com> 1720577046 -0400	Branch: renamed refs/heads/master to refs/heads/main
+7fd3737ab42c9cacdb93232e0c44f53f39447ad4 75cef47ba4f81fe2c593aa716b69f8d2b2ecffd5 matheus-santos-souza <matheus.santos.souza2020@outlook.com> 1720577101 -0400	commit: add README.md
+75cef47ba4f81fe2c593aa716b69f8d2b2ecffd5 9b7d6fedd55e2fd04d604d06dbb009c5dc70f501 matheus-santos-souza <matheus.santos.souza2020@outlook.com> 1720663991 -0400	commit: add client DB
+9b7d6fedd55e2fd04d604d06dbb009c5dc70f501 9a0fb42fe7a9163f8da90db33e6906ba4c1905cf matheus-santos-souza <matheus.santos.souza2020@outlook.com> 1720898670 -0400	commit: finish module microsservices
+9a0fb42fe7a9163f8da90db33e6906ba4c1905cf 96c836cdd39e4666d05d40ebdc761e00a6eca335 matheus-santos-souza <matheus.santos.souza2020@outlook.com> 1722393458 -0400	commit: add events
+96c836cdd39e4666d05d40ebdc761e00a6eca335 635aaf221fd335ac9b711105e81c2e1127220de1 root <root@Matheus> 1722566149 -0400	commit: reestruturando arquitetura
+635aaf221fd335ac9b711105e81c2e1127220de1 02d1a042ce482a1944ea7ec8e799503f6eaf3635 root <root@Matheus> 1722720531 -0400	commit: add unit of work pattern
